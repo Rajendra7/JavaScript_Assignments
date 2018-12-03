@@ -1,0 +1,19 @@
+<html>
+<head>
+<script type="text/javascript">
+window.onload = function(){
+   document.getElementById('submit').onclick = function(e){
+       alert(document.getElementById("name").value);
+       return false;
+   }
+}
+</script>
+</head>
+<body>
+<form method="post">
+<label>Enter the text</label>
+<input type="text" name="name" id="name" /><br><br><br>
+<input type="submit" name="submit" id="submit" value="submit" />
+</form>
+</body>
+</html>
