@@ -1,18 +1,25 @@
-function Person(fname,lname,age,skills,address,dateOfBirth,married,profession)
+//creating the first person
+var person1={ fname:"Rajendra",
+lname:"Kappala",
+age:21,
+skills:["C","Java","Android"],
+address:{city:"Ravulapalem",pincode:533238},
+dateOfBirt:new Date('16-06-1997'),
+profession:"Employee",
+married:false}
+//creating the second person
+var person2={fname:"Robin",
+lname:"Kappala",
+age:19,
+skills:["playing","reading"],
+address:{city:"Ravulapalem", pincode:533238},
+dateOfBirth:new Date('07-07-1999'),
+profession:"Student",
+married:false}
+//using print function to display output
+print=function()
 {
-    this.fname=fname;
-    this.lname=lname;
-    this.age=age;
-    this.skills=skills;
-    this.address=address;
-    this.dateOfBirth=dateOfBirth;
-    this.married=Boolean(married);
-    this.profession=profession;
-    this.print=function(){
-        console.log(this.fname,this.lname,this.age,this.skills,this.address,this.dateOfBirth,this.married,this.profession); 
-    }
+    console.log("person1 details\n",person1);
+    console.log("person2 details\n",person2);
 }
-var person= new Person("Rajendra","Kappala",21,"c,java","Andhra pradesh-533238","16-06-1997","married","software engineer");
-var person2= new Person("Teja","Yenumula",21,"c,java","Andhra pradesh-516360","24-08-1997","unmarried","Network Engineer");
-person.print();
-person2.print();
+print();

@@ -1,22 +1,27 @@
-function Person(fname,lname,age,skills,address,dateOfBirth,married,profession)
+//creating the person named Amitabh
+var Amitabh={ fname:"Rajendra",
+lname:"Kappala",
+age:21,
+skills:["C","Java","Android"],
+address:{city:"Ravulapalem",pincode:533238},
+dateOfBirt:new Date('16-06-1997'),
+profession:"Employee",
+married:false}
+//creating the person named Abhishek
+var Abishek={fname:"Robin",
+lname:"Kappala",
+age:19,
+skills:["playing","reading"],
+address:{city:"Ravulapalem", pincode:533238},
+dateOfBirth:new Date('07-07-1999'),
+profession:"Student",
+married:false}
+console.log(Abishek);
+print=function()
 {
-    this.fname=fname;
-    this.lname=lname;
-    this.age=age;
-    this.skills=skills;
-    this.address=address;
-    this.dateOfBirth=dateOfBirth;
-    this.married=Boolean(married);
-    this.profession=profession;
-    this.print=function(){
-        console.log(this.fname,this.lname,this.age,this.skills,this.address,this.dateOfBirth,this.married,this.profession); 
-    }
+    var Abishek=Object.create(Amitabh); //By creating object we are accessing properties from person1
+    console.log(Amitabh.fname);
+    console.log(Abishek.lname);
+    console.log(Abishek.address);
 }
-var amitabh= new Person("Rajendra","Kappala",21,"c,java","Andhra pradesh-533238","16-06-1997","unmarried","software engineer");
-var abhishek= Object.create(amitabh);
-abhishek.fname="Teja";
-abhishek.lname="Yenumula";
-abhishek.dateOfBirth="24-08-1997";
-
-amitabh.print();
-abhishek.print();
+print();
