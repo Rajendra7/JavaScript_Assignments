@@ -5,44 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Pizza</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="pizza.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <script src="pizza.js"></script>
 </head>
-<body>
-    <form name="frm" onsubmit="return IsEmpty()">
+<body bgcolor="lightgray" >
+    <form name="frm" id="frm" onsubmit="return IsEmpty()">
         <div class="name">Name :
-            <input type="text" id="name" placeholder="Enter Name">
+            <input type="text" id="name" onKeyup="checkform()" placeholder="Enter your Name..." required>
         </div>
         <div class="email">Email :
-            <input type="text" id="email" placeholder="Enter Email">
+            <input type="text" id="email" onKeyup="checkform()" placeholder="Enter Email ID..." >
         </div>
         <div class="Toppings">
             <h4>Toppings :</h4>
             Extra cheese
-            <input type="checkbox" id="cheese" value="Extra cheese"> 
-            Pepperoni
-            <input type="checkbox" id="Pepperoni" value="Pepperoni">
-            Olives
-            <input type="checkbox" id="Olives" value="Olives"> 
-            Pepper
-            <input type="checkbox" id="Pepper" value="Pepper"> 
-            Bacon
-            <input type="checkbox" id="Bacon" value="Bacon"> 
-            Tomatoes
-            <input type="checkbox" id="Tomatoes" value="Tomatoes"> 
-            Mushrooms
+            <input type="checkbox" id="ExtraCheese" value="Extra cheese"> Pepperoni
+            <input type="checkbox" id="Pepperoni" value="Pepperoni"> Olives
+            <input type="checkbox" id="Olives" value="Olives"> Pepper
+            <input type="checkbox" id="Pepper" value="Pepper"> Bacon
+            <input type="checkbox" id="Bacon" value="Bacon"> Tomatoes
+            <input type="checkbox" id="Tomatoes" value="Tomatoes"> Mushrooms
             <input type="checkbox" id="Mushrooms" value="Mushrooms">
-        </div><br>
+        </div>
         <div>
-            <b>How do you have your pizza! </b>
+            <b>How do you want to get your pizza! </b>
             Delivery
-            <input type="radio" name="delivery" id="delivery" value="Delivery">
-            Pickup
+            <input type="radio" name="delivery" id="delivery" value="Delivery"> Pickup
             <input type="radio" name="delivery" id="pickup" value="Pickup">
-        </div><br>
+        </div>
         <div>
             <b>Tip ?</b>
-            <select name="" id="">
+            <select name="" id="tip">
                 <option value="15">15%</option>
                 <option value="20">20%</option>
                 <option value="25">25%</option>
@@ -53,19 +46,21 @@
             <p>
                 <b style="margin: 0px">Address </b>
             </p>
-            <textarea id="AddressText"></textarea>
+            <textarea id="AddressText" required>
+            </textarea>
             <br>
         </div>
         <div class="ActionButtons">
-            <input type="submit" value="Submit">
+            <input id="submitbutton" type="submit" value="Submit">
             <input type="reset" value="Reset">
-            <input type="button" onclick="tbl(Summary)" value="Show Summary">
+            <input type="button" onclick="tbl()" value="Show Summary">
         </div>
-        Pizza Order summary
+        <center><h1>Pizza Order Summary</h1></center>
+<center>
         <table id="Summary">
             <tr>
                 <td>Name</td>
-                <td id="tName",></td>
+                <td id="tName"></td>
             </tr>
             <tr>
                 <td>Email</td>
@@ -77,14 +72,6 @@
             </tr>
             <tr>
                 <td>Toppings</td>
-                <td id="tToppings"></td>
-            </tr>
-            <tr>
-                <td>Topping 1</td>
-                <td id="tToppings"></td>
-            </tr>
-            <tr>
-                <td>Topping 2</td>
                 <td id="tToppings"></td>
             </tr>
             <tr>
@@ -100,6 +87,7 @@
                 <td id="tTotal"></td>
             </tr>
         </table>
+</center>
     </form>
 </body>
 </html>
